@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carta</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column; /* added to stack elements vertically */
+    }
+    .letter {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      padding: 40px;
+      border: 2px solid black;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .letter-content {
+      display: none;
+      font-size: 24px; /* increased font size */
+    }
+    .letter.open .letter-content {
+      display: block;
+    }
+    .button {
+      background-color: #7A288A; /* purple background color */
+      color: #ffffff; /* white text color */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 24px; /* increased font size */
+    }
+    .button:hover {
+      background-color: #8e44ad; /* darker purple on hover */
+    }
+    .heart {
+      font-size: 288px; /* increased font size for heart to make it 2x bigger */
+      color: #FF0000; /* red color for heart */
+      display: block; /* added to center the heart horizontally */
+      text-align: center; /* added to center the heart horizontally */
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">
+    <div class="letter-content">
+      Natalia,
+      <br>
+      Eres una persona unica para mi
+      <br>
+      Te quiero muchisimo
+      <br>
+      <span class="heart">&hearts;</span>
+    </div>
+  </div>
+  <button class="button" onclick="toggleLetter(document.querySelector('.letter'))">Open/Close</button>
+
+  <script>
+    function toggleLetter(letter) {
+      letter.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
